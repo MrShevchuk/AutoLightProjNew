@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<style>
+    .menu {
+            text-align: -moz-left;}
+  </style>
+<head>
+  <title th:utext="${title}"></title>
+</head>
+<body>
+
+<th:block th:include="/fragments/menu"></th:block>
+<h2><span th:utext="${message}"></span></h2>
+
+<ul class="menu">
+  <h1>Catalog:</h1>
+  <li><h4><a href="/d1s">D1S</a></h4></li>
+  <li><h4><a href="/d2s">D2S</a></h4></li>
+  <li><h4><a href="/d3s">D3S</a></h4></li>
+  <li><h4><a href="/h1">H1</a></h4></li>
+  <li><h4><a href="/h4">H4</a></h4></li>
+  <li><h4><a href="/h7">H7</a></h4></li>
+</ul>
+<!--<form action="handler.php">-->
+<!--  <p>Какую цветовую температуру предпочитаете, (К)?</p>-->
+<!--  <p><input type="checkbox" name="a" value="4300"> 4300</p>-->
+<!--  <p><input type="checkbox" name="a" value="5000"> 5000</p>-->
+<!--  <p><input type="checkbox" name="a" value="6000"> 6000</p>-->
+<!--  <p><input type="checkbox" name="a" value="7000"> 7000</p>-->
+<!--  <p><input type="submit" value="Отправить"></p>-->
+<!--</form>-->
+
+</div>
+</body>
+</html>

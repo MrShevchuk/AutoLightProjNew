@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>My orders</title>
+</head>
+<body>
+<th:block th:include="/fragments/menu"></th:block>
+
+
+<h2>Info Page</h2>
+<h3>Welcome : <span th:utext="${#request.userPrincipal.name}"></span></h3>
+
+
+<br/><br/>
+
+<!--<div th:if="${userInfo != null}" th:utext="${userInfo}"></div>-->
+
+<body>
+<form>
+  <fieldset>
+    <legend>
+      <b>Fill the form below and we'll call your ASAP:</b>
+    </legend>
+    <p>Name: <input name="name"></p>
+    <p>Phone: <input type="text" id="phone" placeholder="+380-XXX-XX-XX"></p>
+    <p><input type="submit" value="Enter"></p>
+  </fieldset>
+</form>
+</body>
+
+</body>
+
+</html>

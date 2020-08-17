@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<style>
+  .fig {
+    text-align: -webkit-center;}
+
+  .text {
+    text-align: -webkit-left;
+    color: #000000
+  }
+
+</style>
+<head>
+  <title>Access Denied</title>
+</head>
+
+<body>
+<th:block th:include="./fragments/menu"></th:block>
+
+<h3 th:if="${message != null}" th:utext="${message}" style="color: red;"></h3>
+
+<!--<div th:if="${userInfo != null}" th:utext="${userInfo}"></div>-->
+
+<p class="fig">
+  <img src="images/error.png"
+                    width="300" height="300" alt="403">
+
+</body>
+
+</html>

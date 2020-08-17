@@ -1,0 +1,89 @@
+<style>
+   .fig {
+    text-align: -webkit-center;}
+
+    .text {
+            text-align: center;
+    color: #176cff
+    }
+
+    .right {
+            text-align: right;}
+    .center  {
+     text-align: -webkit-center;}
+  </style>
+</head>
+<p class="fig">
+  <img src="images/light3.jpg"
+                    width="1900" height="250" alt="Auto light"></p>
+</head>
+<body>
+<div xmlns:th="http://www.thymeleaf.org"
+     style="border: 1px solid #ccc;padding:5px;margin-bottom:20px;">
+<!--  <header th:insert="fragments/header.html :: header"> </header>-->
+<!--  <img src="/images/java.jpg"/>-->
+  <div class="right">
+  <a th:href="@{/}">Home</a>
+
+  | &nbsp;
+
+  <a th:href="@{/userInfo}">My orders</a>
+
+  | &nbsp;
+
+<!--  <a th:href="@{/signIn}">Sign in</a>-->
+
+  <a th:if="${#request.userPrincipal != null}" th:href="@{/admin}">Admin Page</a>
+    | &nbsp;
+  <a th:if="${#request.userPrincipal != null}" th:href="@{/logout}">Logout</a>
+  </div>
+  <p class="right">
+    <script type="text/javascript">
+      /* каждую секунду получаем текущую дату и время */
+      /* и вставляем значение в блок с id "current_date_time_block2" */
+      setInterval(function () {
+        document.getElementById('current_date_time_block2').innerHTML = date_time();
+      }, 1000);
+    </script>
+  <div id="current_date_time_block2"></div>
+  <script language="javascript" type="text/javascript"><!--
+  var d = new Date();
+  var day=["Sunday","Monday","Tuesday",
+          "Wednesday","Thursday","Friday","Saturday"];
+
+  var month=["January","February","March","April","May","June",
+          "July","August","September","October","November","December"];
+
+  document.write(day[d.getDay()]+" " +d.getDate()+ " " + month[d.getMonth()]
+          + " " + d.getFullYear() + " г.");
+  //--></script>
+  <script type="text/javascript">
+    /* функция добавления ведущих нулей */
+    /* (если число меньше десяти, перед числом добавляем ноль) */
+    function zero_first_format(value)
+    {
+      if (value < 10)
+      {
+        value='0'+value;
+      }
+      return value;
+    }
+    /* функция получения текущей даты и времени */
+    function date_time()
+    {
+      var current_datetime = new Date();
+      // var day = zero_first_format(current_datetime.getDate());
+      // var month = zero_first_format(current_datetime.getMonth()+1);
+      // var year = current_datetime.getFullYear();
+      var hours = zero_first_format(current_datetime.getHours());
+      var minutes = zero_first_format(current_datetime.getMinutes());
+      var seconds = zero_first_format(current_datetime.getSeconds());
+      return hours+":"+minutes+":"+seconds;
+    }
+    /* выводим текущую дату и время на сайт в блок с id "current_date_time_block" */
+    document.getElementById('current_date_time_block').innerHTML = date_time();
+  </script>
+  </p>
+  <!--<div th:replace="fragments/footer.html :: footer"></div>-->
+</div>
+
